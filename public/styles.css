@@ -1,0 +1,549 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+* {
+	-webkit-text-size-adjust: none;
+	max-width: 100%;
+	font-size: 1.5rem;
+	font-family: Nanum Gothic;
+}
+
+header {
+	margin-top: 2%;
+	margin-left: 5.55556%;
+	margin-right: 5.55556%;
+	margin-bottom: 5px;
+	text-align: center;
+}
+
+header h1 {
+	font-weight: 800;
+}
+
+header .header {
+	width: 88.88889%;
+	height: 10%;
+}
+
+footer {
+	margin-top: 10px;
+	margin-left: 5.55556%;
+	margin-right: 5.55556%;
+	text-align: right;
+	border-top: 1px solid #cccccc;
+	color: #cccccc;
+}
+
+footer .footer {
+	height: 5%;
+	width: 88.88889%;
+}
+
+.contents {
+	width: 88.88889%;
+	height: 85%;
+	margin-left: 5.55556%;
+	margin-right: 5.55556%;
+}
+
+.locator {
+	height: 10%;
+	padding-top: 5px;
+	border-bottom: 1px solid #5D5D5D;
+}
+
+.locator span {
+	font-size: x-large;
+}
+
+.cont {
+	display: table;
+	position: absolute;
+	height: 65%;
+	width: 88.88889%;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.inner {
+	display: table-cell;
+	vertical-align: middle;
+	width: 100%;
+	height: 100%;
+}
+
+.question, .options {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.question {
+	margin-bottom: 10px;
+}
+
+.question span {
+	font-size: x-large;
+	border-bottom: 2px dotted #E3C4FF;
+}
+
+.options {
+	text-align: center;
+	margin: auto;
+}
+
+.options button {
+	margin: 5px;
+}
+
+.go {
+	width: 88.88889%;
+	height: 6%;
+	position: table;
+	position: absolute;
+	bottom: 5%;
+}
+
+div .go #back {
+	float: left;
+}
+
+div .go #next {
+	float: right;
+}
+
+/* For Phone */
+@media only screen and (max-width: 768px) {
+	header h1 {
+		font-size: x-large;
+	}
+
+	.question h1 {
+		font-size: x-large;
+	}
+
+	div.options {
+		height: 68%;
+		overflow: scroll;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	li.span3 {
+		width: 80%;
+	}
+}
+
+/* For images (answers-img) */
+ul.radio {
+	padding: 0;
+	display: block;
+	-webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	-webkit-padding-start: 40px;
+}
+
+li.radio {
+	margin: 1px;
+	padding: 1px;
+	display: list-item;
+	text-align: -webkit-match-parent;
+}
+
+.radio {
+	margin-left: -6.28%;
+	padding: 0 0 0 6.28%;
+	border-width: 0;
+	box-shadow: none;
+	border-radius: 0;
+}
+
+.span3 {
+	padding: 5px;
+	margin-left: 0;
+	margin-bottom: 5px;
+	display: block;
+	box-sizing: border-box;
+	width: 30%;
+	float: left;
+}
+
+label.custom input[type="radio"] {
+	opacity: 0;
+}
+
+label.custom input[type="radio"] ~ .answers-img {
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 5px;
+	margin: 2px;
+	top: 1px;
+}
+
+label.custom input[type="radio"]:hover ~ .answers-img {
+	transform: scale(1);
+	position: relative;
+	overflow: hidden;
+	border: 0px;
+}
+
+label.custom input[type="radio"] ~ .icon {
+	background-color: #FFFFFF;
+	border: 1px solid #5d5d5d;
+	border-radius: 2px;
+	display: inline-block;
+	padding: 6px;
+	position: relative;
+	top: 2px;
+}
+
+label.custom input[type="radio"]:checked ~ .icon {
+	border: 1px solid #5d5d5d;
+	background-color: #5d5d5d;
+}
+
+label.custom input[type="radio"]:checked ~ .icon:after {
+	color: #FFFFFF;
+	content: '\2714';
+	font-size: 13px;
+	font-weight: bold;
+	left: 0.8px;
+	position: absolute;
+	top: -3px;
+	transform: rotate(10deg);
+}
+
+label.custom input[type="radio"]:checked ~ .answers-img {
+	background-color: #bdbdbd;
+}
+
+label.custom input[type="radio"]:checked ~ .answers-img:after {
+	background-color: #dbdbdb;
+}
+
+label.custom input[type="checkbox"] {
+	opacity: 0;
+}
+
+label.custom input[type="checkbox"] ~ .icon {
+	background-color: #FFFFFF;
+	border: 1px solid #5d5d5d;
+	border-radius: 2px;
+	display: inline-block;
+	padding: 6px;
+	position: relative;
+	top: 2px;
+}
+
+label.custom input[type="checkbox"]:checked ~ .icon {
+	border: 1px solid #5d5d5d;
+	background-color: #5d5d5d;
+}
+
+label.custom input[type="checkbox"]:checked ~ .icon:after {
+	color: #FFFFFF;
+	content: '\2714';
+	font-size: 13px;
+	font-weight: bold;
+	left: 0.8px;
+	position: absolute;
+	top: -3px;
+	transform: rotate(10deg);
+}
+
+/* For answer words (pros-words, cons-words) */
+fieldset {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+li {
+	text-align: -webkit-match-parent;
+}
+
+.pros-words {
+	margin-left: -6.28%;
+	padding: 0 0 0 6.28%;
+	border-width: 0;
+	box-shadow: none;
+	border-radius: 0;
+	text-align: center;
+	float: left;
+}
+
+.pros {
+	padding: 3px;
+	margin: 0 5px 10px 0;
+	display: inline-block;
+	box-sizing: inherit;
+	position: relative;
+}
+
+/*
+label.word label {
+display: inline;
+}
+*/
+
+label.word input[type="checkbox"] {
+	opacity: 0;
+}
+
+/*
+label.word input[type="checkbox"] ~ .disp {
+border: 1px solid #5d5d5d;
+border-radius: 5px;
+padding: 8px;
+}
+
+label.word input[type="checkbox"]:checked ~ .disp {
+border: 1px solid #5d5d5d;
+}
+
+label.word input[type="checkbox"]:checked ~ .disp:after {
+background-color: #5d5d5d;
+color: red;
+}
+*/
+
+
+label.word input[type="checkbox"] + label {
+	border: 1px solid #5d5d5d;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+label.word input[type="checkbox"]:checked + label {
+	background-color: #EAEAEA;
+}
+
+label.word input[type="checkbox"]:checked + label:after {
+	background-color: #EAEAEA;
+}
+
+/* For normal look & normal-under (PC) */
+.normal-look, .normal-under {
+	height: 30%;
+	display: inline;
+}
+
+.look-word, .under-word {
+	width: 3%;
+	margin-left: 0;
+	margin-right: auto;
+	text-align: center;
+	display: inline-block;
+	position: relative;
+	top: 50%;
+	transform: translateY(-100%);
+}
+
+.under-word {
+	top: 50%;
+	transform: translateY(-70%);
+}
+
+.look-opt, .under-opt {
+	width: 75%;
+	display: inline-block;
+}
+
+.looks {
+	margin-left: -6.28%;
+	padding: 0 0 0 6.28%;
+	border-width: 0;
+	box-shadow: none;
+	border-radius: 0;
+	text-align: center;
+	display: inline;
+}
+
+.look {
+	width: 13%;
+	padding: 3px;
+	margin: 0 1px 2px 0;
+	display: inline-block;
+	box-sizing: border-box;
+	position: relative;
+}
+
+.disp-txt {
+	height: 50px;
+}
+
+label.look-img input[type="checkbox"] {
+	opacity: 0;
+}
+
+label.look-img input[type="checkbox"] ~ .disp-img {
+	width: 100%;
+	height: auto;
+}
+
+label.look-img input[type="checkbox"]:checked + label {
+	background-color: #EAEAEA;
+}
+
+label.look-img input[type="checkbox"]:checked + label:after {
+	background-color: #EAEAEA;
+}
+
+
+/* For tab look & underwear (Phone) */
+.tab-v-look, .tab-v-under {
+	height: 65%;
+	display: inline;
+}
+
+.tab-look-opt, .tab-under-opt {
+	width: 100%;
+	display: inline-block;
+}
+
+.tab-looks {
+	margin-left: -6.28%;
+	padding: 0 0 0 6.28%;
+	border-width: 0;
+	box-shadow: none;
+	border-radius: 0;
+	text-align: center;
+	display: inline;
+}
+
+.tab-look {
+	width: 45%;
+	padding: 3px;
+	margin: 0 1px 2px 0;
+	display: inline-block;
+	box-sizing: border-box;
+	position: relative;
+}
+
+label.tab-look-img input[type="checkbox"] {
+	opacity: 0;
+}
+
+label.tab-look-img input[type="checkbox"] ~ .disp-img {
+	width: 100%;
+	height: auto;
+}
+
+label.tab-look-img input[type="checkbox"]:checked + label {
+	background-color: #EAEAEA;
+}
+
+label.tab-look-img input[type="checkbox"]:checked + label:after {
+	background-color: #EAEAEA;
+}
+
+/* For Color options */
+.color-opt {
+	margin-left: 3%;
+	display: inline-block;
+}
+.colors {
+	margin-left: -6.28%;
+	padding: 0 0 0 6.28%;
+	border-width: 0;
+	box-shadow: none;
+	border-radius: 0;
+	text-align: center;
+	float: left;
+}
+
+.color {
+	width: 16%;
+	padding: 3px;
+	margin: 0 5px 10px 0;
+	display: inline-block;
+	box-sizing: border-box;
+	position: relative;
+}
+
+label.color-img input[type="checkbox"] {
+	opacity: 0;
+}
+
+label.color-img input[type="checkbox"] ~ .disp-img {
+	width: 100%;
+	height: auto;
+}
+
+label.color-img input[type="checkbox"]:checked + label {
+	background-color: #EAEAEA;
+}
+
+label.color-img input[type="checkbox"]:checked + label:after {
+	background-color: #EAEAEA;
+}
+
+/* For Pad */
+.pad-words {
+	margin-left: -6.28%;
+	padding: 0 0 0 6.28%;
+	border-width: 0;
+	box-shadow: none;
+	border-radius: 0;
+	text-align: center;
+}
+
+.pads {
+	padding: 3px;
+	margin: 0 8px 15px 0;
+	display: inline-block;
+	box-sizing: inherit;
+	position: relative;
+}
+
+label.pad input[type="radio"] {
+	opacity: 0;
+}
+
+label.pad input[type="radio"] + label {
+	border: 1px solid #5d5d5d;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+label.pad input[type="radio"]:checked + label {
+	background-color: #EAEAEA;
+}
+
+label.pad input[type="radio"]:checked + label:after {
+	background-color: #EAEAEA;
+}
+
+/* For Experience */
+.exp-words {
+	margin-left: -6.28%;
+	padding: 0 0 0 6.28%;
+	border-width: 0;
+	box-shadow: none;
+	border-radius: 0;
+	text-align: center;
+}
+
+.exps {
+	padding: 3px;
+	margin: 0 8px 15px 0;
+	display: inline-block;
+	box-sizing: inherit;
+	position: relative;
+}
+
+label.exp input[type="radio"] {
+	opacity: 0;
+}
+
+label.exp input[type="radio"] + label {
+	border: 1px solid #5d5d5d;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+label.exp input[type="radio"]:checked + label {
+	background-color: #EAEAEA;
+}
+
+label.exp input[type="radio"]:checked + label:after {
+	background-color: #EAEAEA;
+}

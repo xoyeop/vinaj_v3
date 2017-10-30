@@ -1,0 +1,35 @@
+<div class="quiz">
+	<!-- Locator -->
+	<div class="locator">
+		<span>Q3</span>
+	</div>
+
+	<!-- Container -->
+	<div class="cont">
+		<div class="inner">
+			<!-- Question -->
+			<div class="question">
+				<span class="q">착용하신 상품의 브라 피팅 상태를 선택해 주세요.</span>
+			</div>
+
+			<!-- Options -->
+			<div class="options">
+				<ul class="radio">
+					<li class="span3" *ngFor="let brafit of brafits">
+						<label class="custom">
+							<input type="radio" name="brafits" value="{{brafit.value}}" [checked]="idx === 0" (change)="onSelectionChange(brafit)" [(ngModel)]="brafit.checked" />
+							<img class="answers-img" src="./resources/img/q3_0{{brafit.value}}.png" style="width: 100%; height: auto; vertical-align: middle;"/>
+							<span>{{brafit.display}}</span>
+						</label>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- Back/Next -->
+	<div class="go">
+		<button type="button" class="btn btn-default" id="back" (click)=goBack()><i class="fa fa-angle-left" aria-hidden="true"></i>&nbsp;Back</button>
+		<button type="button" class="btn btn-default" id="next" (click)=goNext()>Next&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></button>
+	</div>
+</div>

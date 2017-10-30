@@ -1,0 +1,132 @@
+<div class="quiz">
+	<!-- Locator -->
+	<div class="locator">
+		<span>Q9</span>
+	</div>
+
+	<!-- Container -->
+	<div class="cont">
+		<div class="inner">
+			<!-- Question -->
+			<div class="question">
+				<span class="q">불금에 가장 즐겨입는 유형은 어떤 스타일입니까?</span>
+			</div>
+
+			<!-- Options -->
+			<div class="options">
+				<!-- Normal version (for PC) -->
+				<div class="hidden-xs">
+					<!-- Look -->
+					<div class="normal-look">
+						<div class="look-word">
+							<h3>룩</h3>
+						</div>
+						<div class="look-opt">
+							<fieldset>
+								<ul class="looks">
+									<li class="look" *ngFor="let look of looks">
+										<label class="look-img">
+											<input type="checkbox" id="c{{look.value}}" name="looks" value="{{look.value}}"
+											[checked]="idx === 0"
+											(change)="onSelectionChange(look)"
+											[(ngModel)]="look.checked" />
+											<label for="c{{look.value}}">
+												<img  class="disp-img" src="./resources/img/q10_1_0{{look.value}}.png"/>
+												<span class="disp-txt">{{look.display}}</span>
+											</label>
+										</label>
+									</li>
+								</ul>
+							</fieldset>
+						</div>
+					</div>
+
+					<!-- Line -->
+					<hr style="border-top: dotted 1px;" />
+
+					<!-- Underwear -->
+					<div class="normal-under">
+						<div class="under-word">
+							<h3>속옷</h3>
+						</div>
+						<div class="under-opt">
+							<fieldset>
+								<ul class="looks">
+									<li class="look" *ngFor="let under of unders">
+										<label class="look-img">
+											<input type="checkbox" id="c2{{under.value}}" name="unders" value="{{under.value}}"
+											[checked]="idx === 0"
+											(change)="onSelectionChange(under)"
+											[(ngModel)]="under.checked" />
+											<label for="c2{{under.value}}">
+												<img  class="disp-img" src="./resources/img/q10_2_0{{under.value}}.png"/>
+												<span class="disp-txt">{{under.display}}</span>
+											</label>
+										</label>
+									</li>
+								</ul>
+							</fieldset>
+						</div>
+					</div>
+				</div>
+
+				<!-- Tab version (only for Phone) -->
+				<div class="visible-xs">
+					<!-- Tab view -->
+					<p-tabView>
+						<p-tabPanel header="룩" [headerStyle]="{'width':'48%', 'text-align':'center', 'padding-left':'19%'}">
+							<div class="tab-v-look">
+								<div class="tab-look-opt">
+									<fieldset>
+										<ul class="tab-looks">
+											<li class="tab-look" *ngFor="let look of looks">
+												<label class="tab-look-img">
+													<input type="checkbox" id="c{{look.value}}" name="looks" value="{{look.value}}"
+													[checked]="idx === 0"
+													(change)="onSelectionChange(look)"
+													[(ngModel)]="look.checked" />
+													<label for="c{{look.value}}">
+														<img  class="disp-img" src="./resources/img/q10_1_0{{look.value}}.png"/>
+														<span class="disp-txt">{{look.display}}</span>
+													</label>
+												</label>
+											</li>
+										</ul>
+									</fieldset>
+								</div>
+							</div>
+						</p-tabPanel>
+						<p-tabPanel header="속옷" [headerStyle]="{'width':'48%', 'text-align':'center', 'padding-left':'17%'}">
+							<div class="tab-v-under">
+								<div class="tab-under-opt">
+									<fieldset>
+										<ul class="tab-looks">
+											<li class="tab-look" *ngFor="let under of unders">
+												<label class="tab-look-img">
+													<input type="checkbox" id="c2{{under.value}}" name="unders" value="{{under.value}}"
+													[checked]="idx === 0"
+													(change)="onSelectionChange(under)"
+													[(ngModel)]="under.checked" />
+													<label for="c2{{under.value}}">
+														<img  class="disp-img" src="./resources/img/q10_2_0{{under.value}}.png"/>
+														<span class="disp-txt">{{under.display}}</span>
+													</label>
+												</label>
+											</li>
+										</ul>
+									</fieldset>
+								</div>
+							</div>
+						</p-tabPanel>
+					</p-tabView>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Back/Next -->
+	<div class="go">
+		<button type="button" class="btn btn-default" id="back" (click)=goBack()><i class="fa fa-angle-left" aria-hidden="true"></i>&nbsp;Back</button>
+		<button type="button" class="btn btn-default" id="next" (click)=goNext()>Next&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></button>
+	</div>
+</div>

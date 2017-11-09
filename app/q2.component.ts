@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Globals } from './globals';
 
 import { ButtonModule } from 'primeng/primeng';
 
@@ -20,7 +21,8 @@ export class Q2Component {
 	selectedPant: string = 'm';
 
 	constructor(
-		private router: Router
+		private router: Router,
+		private globals: Globals
 	) {
 		this.bands = [];
 		this.bands.push({ label: '65', value: 65 });
@@ -51,6 +53,10 @@ export class Q2Component {
 	}
 
 	goNext() {
+		this.globals.vBand = this.selectedBand;
+		this.globals.vCup = this.selectedCup;
+		this.globals.vPant = this.selectedPant;
+	
 		this.router.navigate(['/q3']);
 	}
 

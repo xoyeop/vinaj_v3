@@ -21,12 +21,20 @@ export class Q13Component {
 
 	selectedEntry: { [key: string]: any };
 
+	display: boolean = false;
+
 	goBack() {
 		this.router.navigate(['/q12']);
 	}
 
 	goNext() {
-		this.router.navigate(['/q14']);
+		if (this.selectedEntry == null )
+			this.display = true;
+	 	else {
+			this.globals.pPad = this.selectedEntry.value;
+
+			this.router.navigate(['/q14']);
+		}
 	}
 
 	onSelectionChange(entry) {

@@ -22,12 +22,30 @@ export class Q10Component {
 
 	selectedEntry: { [key: string]: any };
 
+	display_lu: boolean = false;
+	display_look: boolean = false;
+	display_under; boolean = false;
+
 	goBack() {
 		this.router.navigate(['/q9']);
 	}
 
 	goNext() {
-		this.router.navigate(['/q11']);
+		if ( this.selectedLooks.length == 0 && this.selectedUnders.length == 0 )
+			this.display_lu = true;
+		else if ( this.selectedLooks.length == 0 )
+			this.display_look = true;
+		else if ( this.selectedUnders.length == 0 )
+			this.display_under = true;
+		else {
+			this.globals.weekendL = [];
+			this.globals.weekendL = this.selectedLooks;
+
+			this.globals.weekendU = [];
+			this.globals.weekendU = this.selectedUnders;
+
+			this.router.navigate(['/q11']);
+		}
 	}
 
 	onSelectionChange(entry) {

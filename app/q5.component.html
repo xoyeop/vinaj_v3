@@ -9,7 +9,7 @@
 		<div class="inner">
 			<!-- Question -->
 			<div class="question">
-				<span class="q">착용하신 상품의 어깨끈 피팅 상태를 선택해 주세요.</span>
+				<span class="q">착용하신 상품의 <b>어깨끈 피팅 상태</b>를 선택해 주세요.</span>
 			</div>
 
 			<!-- Options -->
@@ -33,3 +33,9 @@
 		<button type="button" class="btn btn-default" id="next" (click)=goNext()>Next&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></button>
 	</div>
 </div>
+
+<!-- Dialog to alert about no checking -->
+<p-dialog header="VINAJ STYLE QUIZ" [(visible)]="display" modal="modal" responsive="true">
+	<p>어깨끈의 피팅 상태를 선택해 주세요.</p>
+	<button type="button" pButton (click)="display=false" label="OK"></button>
+</p-dialog>

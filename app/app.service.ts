@@ -4,14 +4,11 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class AppService {
-	//private baseUrl = "http://192.168.179.129/quiz_writer.php";
-	//private answerUrl = "http://192.168.179.129/quiz_reader.php";
+	//private baseUrl = "http://45.249.160.212/quiz_writer.php";
+	//private answerUrl = "http://45.249.160.212/quiz_reader.php";
 
-	//private baseUrl = "http://stdio.kr:8080/quiz_writer.php";
-	//private answerUrl = "http://stdio.kr:8080/quiz_reader.php";
-
-	private baseUrl = "http://45.249.160.212/quiz_writer.php";
-	private answerUrl = "http://45.249.160.212/quiz_reader.php";
+	private baseUrl = "http://45.249.160.212/quiz_writer_test.php";
+	private answerUrl = "http://45.249.160.212/quiz_reader_test.php";
 
 	private headers = new Headers({'Content-Type': 'application/json'});
 

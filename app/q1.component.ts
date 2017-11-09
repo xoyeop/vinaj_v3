@@ -21,12 +21,23 @@ export class Q1Component {
 
 	selectedEntry: { [key: string]: any };
 
+	display: boolean = false;
+
 	goBack() {
 		this.router.navigate(['/start']);
 	}
 	
 	goNext() {
-		this.router.navigate(['/q2']);
+		if ( this.selectedEntry == null )
+			this.display = true;
+		else {
+			this.globals.exp = this.selectedEntry.value;
+
+			if (this.globals.exp == 1)
+				this.router.navigate(['/q2']);
+			else
+				this.router.navigate(['/q8']);
+		}
 	}
 
 	onSelectionChange(entry) {

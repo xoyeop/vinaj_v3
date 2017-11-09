@@ -9,6 +9,7 @@ import { ButtonModule } from 'primeng/primeng';
 	templateUrl: 'q6.component.html',
 	styles: [`
 		.ui-inputtext {
+			margin-left: 10px;
 			height: 39px;
 			border: 1px solid #5d5d5d;
 			border-radius: 5px;
@@ -23,16 +24,28 @@ export class Q6Component {
 	) {}
 
 	public proses = this.globals.proses;
-	public etc: string;
+	public etc: string = "";
 
 	selectedEntry: { [key: string]: any };
 
+	display: boolean = false;
+
 	goBack() {
-		this.router.navigate(['/q5']);
+			this.router.navigate(['/q5']);
 	}
 
 	goNext() {
-		this.router.navigate(['/q7']);
+		if ( this.selectedEntry == null && this.etc == "")
+			this.display = true;
+		else {
+			this.globals.vProsN = [];
+			this.globals.vProsN = this.selectedOptions;
+
+			if ( this.etc != "" ) this.globals.vProsN.push(13);
+			this.globals.vProsT = this.etc;
+
+			this.router.navigate(['/q7']);
+		}
 	}
 
 	onSelectionChange(entry) {

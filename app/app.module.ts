@@ -38,6 +38,7 @@ import { Q12Component } from './q12.component';
 import { Q13Component } from './q13.component';
 import { Q14Component } from './q14.component';
 import { Q15Component } from './q15.component';
+import { ResultComponent } from './result.component';
 
 import { AppService } from './app.service';
 
@@ -76,6 +77,7 @@ import { AppService } from './app.service';
 		Q13Component,
 		Q14Component,
 		Q15Component,
+		ResultComponent,
 	],
 	providers: [
 		Globals,

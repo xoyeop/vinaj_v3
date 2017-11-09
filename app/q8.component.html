@@ -9,7 +9,8 @@
 		<div class="inner">
 			<!-- Question -->
 			<div class="question">
-				<span class="q">평소 데일리룩으로 가장 선호하는 유형은 어떤 스타일입니까?</span>
+				<span class="q">평소 <b>데일리룩</b>으로 가장 선호하는 유형은 어떤 스타일입니까?</span>
+				<p>(중복체크 가능)</p>
 			</div>
 
 			<!-- Options -->
@@ -60,7 +61,7 @@
 											[(ngModel)]="under.checked" />
 											<label for="c2{{under.value}}">
 												<img  class="disp-img" src="./resources/img/q8_2_0{{under.value}}.png"/>
-												<div class="disp-txt">{{under.display}}</div>
+												<!--<div class="disp-txt">{{under.display}}</div>-->
 											</label>
 										</label>
 									</li>
@@ -109,7 +110,7 @@
 													[(ngModel)]="under.checked" />
 													<label for="c2{{under.value}}">
 														<img  class="disp-img" src="./resources/img/q8_2_0{{under.value}}.png"/>
-														<span class="disp-txt">{{under.display}}</span>
+														<!--<span class="disp-txt">{{under.display}}</span>-->
 													</label>
 												</label>
 											</li>
@@ -130,3 +131,17 @@
 		<button type="button" class="btn btn-default" id="next" (click)=goNext()>Next&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></button>
 	</div>
 </div>
+
+<!-- Dialog to alert about no checking -->
+<p-dialog header="VINAJ STYLE QUIZ" [(visible)]="display_lu" modal="modal" responsive="true">
+	<p>룩과 속옷을 선택해 주세요.</p>
+	<button type="button" pButton (click)="display_lu=false" label="OK"></button>
+</p-dialog>
+<p-dialog header="VINAJ STYLE QUIZ" [(visible)]="display_look" modal="modal" responsive="true">
+	<p>룩을 선택해 주세요.</p>
+	<button type="button" pButton (click)="display_look=false" label="OK"></button>
+</p-dialog>
+<p-dialog header="VINAJ STYLE QUIZ" [(visible)]="display_under" modal="modal" responsive="true">
+	<p>속옷을 선택해 주세요.</p>
+	<button type="button" pButton (click)="display_under=false" label="OK"></button>
+</p-dialog>

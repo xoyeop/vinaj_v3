@@ -17,6 +17,7 @@ import { Q12Component } from './q12.component';
 import { Q13Component } from './q13.component';
 import { Q14Component } from './q14.component';
 import { Q15Component } from './q15.component';
+import { ResultComponent } from './result.component';
 
 const routes: Routes = [
 	{ path: '', redirectTo: '/start', pathMatch: 'full' },
@@ -36,6 +37,7 @@ const routes: Routes = [
 	{ path: 'q13', 	 component: Q13Component },
 	{ path: 'q14', 	 component: Q14Component },
 	{ path: 'q15', 	 component: Q15Component },
+	{ path: 'result',component: ResultComponent },
 ];
 
 @NgModule({

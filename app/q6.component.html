@@ -9,7 +9,7 @@
 		<div class="inner">
 			<!-- Question -->
 			<div class="question">
-				<span class="q">VINAJ가 좋았던 점을 선택해 주세요.</span>
+				<span class="q">VINAJ가 <b>좋았던 점</b>을 선택해 주세요.</span>
 			</div>
 
 			<!-- Options -->
@@ -44,3 +44,9 @@
 		<button type="button" class="btn btn-default" id="next" (click)=goNext()>Next&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></button>
 	</div>
 </div>
+
+<!-- Dialog to alert about no checking -->
+<p-dialog header="VINAJ STYLE QUIZ" [(visible)]="display" modal="modal" responsive="true">
+	<p>좋았던 점을 선택해 주세요.</p>
+	<button type="button" pButton (click)="display=false" label="OK"></button>
+</p-dialog>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Globals } from './globals';
 
 import { ButtonModule } from 'primeng/primeng';
 
@@ -12,7 +13,8 @@ import { ButtonModule } from 'primeng/primeng';
 
 export class Q5Component {
 	constructor(
-		private router: Router
+		private router: Router,
+		private globals: Globals
 	) {}
 
 	public shoulderfits = [
@@ -21,12 +23,32 @@ export class Q5Component {
 		{ value: 3, display: '흘러내린다.', checked: false, tip: '어깨끈에도 수명이 있다는 것을 알고 계셨나요? \n만약 타이트하게 줄여입었는데도 계솔 흘러내린다면, 어깨끈을 교체해야할 때가 왔다는 신호입니다. 그래도 여전히 흘러내리신다면, 둘레사이즈가 큰 경우 일 수 있으니, 브라의 둘레를 한사이즈 작게 선택해보시는 것을 추천해드립니다.' }
 	];
 
+	selectedEntry: { [key: string]: any };
+
+	display: boolean = false;
+
 	goBack() {
 		this.router.navigate(['/q4']);
 	}
 	
 	goNext() {
-		this.router.navigate(['/q6']);
+		if ( this.selectedEntry == null )
+			this.display = true;
+		else {
+			this.globals.shoulderfit = this.selectedEntry.value;
+
+			this.router.navigate(['/q6']);
+		}
+	}
+
+	onSelectionChange(entry) {
+		this.selectedEntry = Object.assign({}, this.selectedEntry, entry);
+	}		
+
+	get selectedOptions() {
+		return this.shoulderfits
+			.filter(opt => opt.checked)
+			.map(opt => opt.value);
 	}
 
 }

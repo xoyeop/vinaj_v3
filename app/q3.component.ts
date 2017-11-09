@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Globals } from './globals';
 
 import { ButtonModule } from 'primeng/primeng';
 
@@ -17,7 +18,8 @@ import { ButtonModule } from 'primeng/primeng';
 
 export class Q3Component {
 	constructor(
-		private router: Router
+		private router: Router,
+		private globals: Globals
 	) {}
 
 	public brafits = [
@@ -28,12 +30,32 @@ export class Q3Component {
 		{ value: 5, display: '캡 중간이 빈다.', checked: false, tip: '브라의 언더부분과 컵의 용접 및 와이어가 맞지 않아서 (컵 사이즈가 커서) 가슴이 컵안에서 안정되게 자리잡지 못했기 때문입니다. 컵사이즈를 좀더 작은 사이즈로 선택하시는 것을 권장해드립니다.' }
 	];
 
+	selectedEntry: { [key: string]: any };
+
+	display: boolean = false;
+
 	goBack() {
 		this.router.navigate(['/q2']);
 	}
 	
 	goNext() {
-		this.router.navigate(['/q4']);
+		if ( this.selectedEntry == null )
+			this.display = true;
+		else {
+			this.globals.brafit = this.selectedEntry.value;
+
+			this.router.navigate(['/q4']);
+		}
 	}
 
+	onSelectionChange(entry) {
+		this.selectedEntry = Object.assign({}, this.selectedEntry, entry);
+	}		
+
+	get selectedOptions() {
+		return this.brafits
+			.filter(opt => opt.checked)
+			.map(opt => opt.value);
+	}
+	
 }

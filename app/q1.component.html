@@ -14,6 +14,7 @@
 
 			<!-- Options -->
 			<div class="options">
+				<!-- Buttons for checking experience (경험 여부 확인 버튼) -->
 				<fieldset>
 					<ul class="exp-words">
 						<li class="exps">
@@ -29,10 +30,6 @@
 						</li>
 					</ul>
 				</fieldset>
-				<!--
-				<button type="button" class="btn btn-info">예</button>
-				<button type="button"	class="btn">아니오</button>
-				-->
 			</div>
 		</div>
 	</div>
@@ -43,3 +40,9 @@
 		<button type="button" class="btn btn-default" id="next" (click)=goNext()>Next&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></button>
 	</div>
 </div>
+
+<!-- Dialog to alert about no checking -->
+<p-dialog header="VINAJ STYLE QUIZ" [(visible)]="display" modal="modal" responsive="true">
+	<p>비나제이 구매 경험을 선택해 주세요.</p>
+	<button type="button" pButton (click)="display=false" label="OK"></button>
+</p-dialog>

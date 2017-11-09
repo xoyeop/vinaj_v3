@@ -21,12 +21,21 @@ export class Q12Component {
 
 	selectedEntry: { [key: string]: any };
 
+	display: boolean = false;
+
 	goBack() {
 		this.router.navigate(['/q11']);
 	}
 
 	goNext() {
-		this.router.navigate(['/q13']);
+		if ( this.selectedColors.length == 0 )
+			this.display = true;
+		else {
+			this.globals.presentC = [];
+			this.globals.presentC = this.selectedColors;
+
+			this.router.navigate(['/q13']);
+		}
 	}
 
 	onSelectionChange(entry) {

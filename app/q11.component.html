@@ -9,7 +9,8 @@
 		<div class="inner">
 			<!-- Question -->
 			<div class="question">
-				<span class="q">선호하는 색상은 무엇입니까?</span>
+				<span class="q"><b>선호하는 색상</b>은 무엇입니까?</span>
+				<p>(중복체크 가능)</p>
 			</div>
 
 			<!-- Options -->
@@ -42,3 +43,9 @@
 		<button type="button" class="btn btn-default" id="next" (click)=goNext()>Next&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></button>
 	</div>
 </div>
+
+<!-- Dialog to alert about no checking -->
+<p-dialog header="VINAJ STYLE QUIZ" [(visible)]="display" modal="modal" responsive="true">
+	<p>선호하는 색상을 선택해 주세요.</p>
+	<button type="button" pButton (click)="display=false" label="OK"></button>
+</p-dialog>

@@ -3,7 +3,7 @@
 * {
 	-webkit-text-size-adjust: none;
 	max-width: 100%;
-	font-size: 1.5rem;
+	font-size: 1.4rem;
 	font-family: Nanum Gothic;
 }
 
@@ -36,6 +36,15 @@ footer {
 footer .footer {
 	height: 5%;
 	width: 88.88889%;
+}
+
+.start_p {
+	font-size: large;
+}
+
+.start_p b {
+	font-size: large;
+	font-weight: 900;
 }
 
 .contents {
@@ -80,9 +89,14 @@ footer .footer {
 	margin-bottom: 10px;
 }
 
-.question span {
+.question .q {
 	font-size: x-large;
 	border-bottom: 2px dotted #E3C4FF;
+}
+
+.question .q b {
+	font-size: x-large;
+	font-weight: 900;
 }
 
 .options {
@@ -114,6 +128,15 @@ div .go #next {
 @media only screen and (max-width: 768px) {
 	header h1 {
 		font-size: x-large;
+	}
+
+	.start_p {
+		font-size: small;
+	}
+
+	.start_p b {
+		font-size: medium;
+		font-weight: 900;
 	}
 
 	.question h1 {
@@ -272,7 +295,7 @@ li {
 
 .pros {
 	padding: 3px;
-	margin: 0 5px 10px 0;
+	margin: 3px 5px 10px 3px;
 	display: inline-block;
 	box-sizing: inherit;
 	position: relative;
@@ -380,23 +403,29 @@ label.look-img input[type="checkbox"] ~ .disp-img {
 }
 
 label.look-img input[type="checkbox"]:checked + label {
-	background-color: #EAEAEA;
+	background-color: #B2CCFF;
 }
 
 label.look-img input[type="checkbox"]:checked + label:after {
-	background-color: #EAEAEA;
+	background-color: #B2CCFF;
 }
 
 
 /* For tab look & underwear (Phone) */
+.ui-tabview-panels {
+	overflow-y: scroll;
+}
+
 .tab-v-look, .tab-v-under {
-	height: 65%;
+	height: 70%;
 	display: inline;
+	overflow-y: scroll;
 }
 
 .tab-look-opt, .tab-under-opt {
 	width: 100%;
 	display: inline-block;
+	overflow-y: scroll;
 }
 
 .tab-looks {
@@ -428,11 +457,11 @@ label.tab-look-img input[type="checkbox"] ~ .disp-img {
 }
 
 label.tab-look-img input[type="checkbox"]:checked + label {
-	background-color: #EAEAEA;
+	background-color: #D8D8D8;
 }
 
 label.tab-look-img input[type="checkbox"]:checked + label:after {
-	background-color: #EAEAEA;
+	background-color: #D8D8D8;
 }
 
 /* For Color options */
@@ -469,16 +498,16 @@ label.color-img input[type="checkbox"] ~ .disp-img {
 }
 
 label.color-img input[type="checkbox"]:checked + label {
-	background-color: #EAEAEA;
+	background-color: #D8D8D8;
 }
 
 label.color-img input[type="checkbox"]:checked + label:after {
-	background-color: #EAEAEA;
+	background-color: #D8D8D8;
 }
 
 /* For Pad */
 .pad-words {
-	margin-left: -6.28%;
+	margin-left: -4.28%;
 	padding: 0 0 0 6.28%;
 	border-width: 0;
 	box-shadow: none;
@@ -488,7 +517,7 @@ label.color-img input[type="checkbox"]:checked + label:after {
 
 .pads {
 	padding: 3px;
-	margin: 0 8px 15px 0;
+	margin: 3px 8px 15px 3px;
 	display: inline-block;
 	box-sizing: inherit;
 	position: relative;
@@ -514,7 +543,7 @@ label.pad input[type="radio"]:checked + label:after {
 
 /* For Experience */
 .exp-words {
-	margin-left: -6.28%;
+	margin-left: -4.28%;
 	padding: 0 0 0 6.28%;
 	border-width: 0;
 	box-shadow: none;
@@ -532,6 +561,8 @@ label.pad input[type="radio"]:checked + label:after {
 
 label.exp input[type="radio"] {
 	opacity: 0;
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
 label.exp input[type="radio"] + label {

@@ -1,0 +1,50 @@
+<div class="quiz">
+	<!-- Locator -->
+	<div class="locator">
+		<span>RESULT</span>
+	</div>
+
+	<!-- Container -->
+	<div class="cont">
+		<div class="inner">
+			<!-- Question -->
+			<div class="question">
+				<span class="q">VINAJ가 다음 상품들을 <b>추천</b>해 드립니다<i class="fa fa-smile-o"></i></span>
+			</div>
+
+			<!-- Results -->
+			<div class="options">
+				<div class="daily" *ngIf="dailyProds[0] != null">
+					<br/>
+					<h3><i class="fa fa-sun-o" style="color: yellow;"></i> 데일리</h3>
+					<div *ngFor="let d of dailyProds">
+						<h4><a href="{{d.link}}" target="_blank">{{d.display}}</a></h4>
+					</div>
+				</div>
+
+				<div class="friday" *ngIf="fridayProds[0] != null">
+					<br/>
+					<h3><i class="fa fa-glass" style="color: red;"></i> 불금</h3>
+					<div *ngFor="let f of fridayProds">
+						<h4><a href="{{f.link}}" target="_blank">{{f.display}}</a></h4>
+					</div>
+				</div>
+
+				<div class="weekend" *ngIf="weekendProds[0] != null">
+					<br/>
+					<h3><i class="fa fa-music" style="color: blue;"></i> 주말</h3>
+					<div *ngFor="let w of weekendProds">
+						<h4><a href="{{w.link}}" target="_blank">{{w.display}}</a></h4>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- Back/Next -->
+	<div class="go">
+		<button type="button" class="btn btn-default" id="back" (click)=goBack()><i class="fa fa-angle-left" aria-hidden="true"></i>&nbsp;Back</button>
+		<button type="button" class="btn btn-default" id="next" (click)=goNext()>HOME&nbsp;<i class="fa fa-home" aria-hidden="true"></i></button>
+	</div>
+</div>
